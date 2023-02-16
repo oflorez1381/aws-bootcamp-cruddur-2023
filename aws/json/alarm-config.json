@@ -1,6 +1,3 @@
-// 20230215224144
-// https://raw.githubusercontent.com/omenking/aws-bootcamp-cruddur-2023/week-1-again/aws/json/alarm-config.json
-
 {
   "AlarmName": "DailyEstimatedCharges",
   "AlarmDescription": "This alarm would be triggered if the daily estimated charges exceeds 1$",
