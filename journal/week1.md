@@ -98,12 +98,12 @@ psql -Upostgres --host localhost
 ### backend
 <img src="assets/week1/build-backend.png" width="1000"/>
 <img src="assets/week1/tag-push-backend.png" width="1000"/>
-<img src="assets/week1/backend-dockerhub.png.png" width="1000"/>
+<img src="assets/week1/backend-dockerhub.png" width="1000"/>
 
 ### frontend
 <img src="assets/week1/build-frontend.png" width="1000"/>
 <img src="assets/week1/tag-push-frontend.png" width="1000"/>
-<img src="assets/week1/frontend-dockerhub.png.png" width="1000"/>
+<img src="assets/week1/frontend-dockerhub.png" width="1000"/>
 
 
 ## Implement a healthcheck in the V3 Docker compose file
