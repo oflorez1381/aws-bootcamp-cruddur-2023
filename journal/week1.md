@@ -111,3 +111,14 @@ psql -Upostgres --host localhost
   - ```sh
         docker compose -f docker-compose-v3.yml up
       ``` 
+    
+# how to install Docker on your localmachine and get the same containers running outside
+to install docker, go to https://docs.docker.com/get-docker/ and choose your OS in my case was mac so i followed https://docs.docker.com/desktop/install/mac-install/
+after that i ran in the root of the project the followed command to run locally cruddur
+```sh
+  docker compose -f docker-compose-v3.yml up
+``` 
+<img src="assets/week1/backend-localhost.png" width="1000"/>
+<img src="assets/week1/frontend-localhost.png" width="1000"/>
+
+
