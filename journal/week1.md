@@ -19,7 +19,7 @@ During week 01, we did the follow activities:
 # Docker Files
 - [Dockerfile File for Backend](../backend-flask/Dockerfile)
 - [Dockerfile File for Frontend](../frontend-react-js/Dockerfile)
-- [Docker Compose](../docker-compose.yml) with support to postgresql and dynamo db local 
+- [Docker Compose](../docker-compose.yml) with support to postgresql and dynamo db **ONLY GITPOD ENV**
 
 # Open Api Documentation
 - [Open Api File](../backend-flask/openapi-3.0.yml)
@@ -82,3 +82,43 @@ aws dynamodb scan --table-name Music --query "Items" --endpoint-url http://local
 psql -Upostgres --host localhost
 ```
 <img src="assets/week1/postgresql-connect.png" width="1000"/>
+
+# Homework Challenges    
+
+## Run the dockerfile CMD as an external script
+- [Dockerfile File for Backend](../backend-flask/Dockerfile)
+- [Dockerfile File for Frontend](../frontend-react-js/Dockerfile)
+- [Docker Compose V2](../docker-compose-v2.yml) with support to postgresql and dynamo db local **ONLY LOCAL ENV**
+  - ```sh
+      docker compose -f docker-compose-v2.yml up
+    ```
+    
+## Push and tag a image to DockerHub (they have a free tier)
+
+### backend
+<img src="assets/week1/build-backend.png" width="1000"/>
+<img src="assets/week1/tag-push-backend.png" width="1000"/>
+<img src="assets/week1/backend-dockerhub.png" width="1000"/>
+
+### frontend
+<img src="assets/week1/build-frontend.png" width="1000"/>
+<img src="assets/week1/tag-push-frontend.png" width="1000"/>
+<img src="assets/week1/frontend-dockerhub.png" width="1000"/>
+
+
+## Implement a healthcheck in the V3 Docker compose file
+- [Docker Compose V3](../docker-compose-v3.yml) with support to postgresql and dynamo db local, healthcheck **ONLY LOCAL ENV**
+  - ```sh
+        docker compose -f docker-compose-v3.yml up
+      ``` 
+    
+# how to install Docker on your localmachine and get the same containers running outside
+to install docker, go to https://docs.docker.com/get-docker/ and choose your OS in my case was mac so i followed https://docs.docker.com/desktop/install/mac-install/
+after that i ran in the root of the project the followed command to run locally cruddur
+```sh
+  docker compose -f docker-compose-v3.yml up
+``` 
+<img src="assets/week1/backend-localhost.png" width="1000"/>
+<img src="assets/week1/frontend-localhost.png" width="1000"/>
+
+
