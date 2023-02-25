@@ -15,6 +15,8 @@ During week 01, we did the follow activities:
 | Write a React Page for Notifications           | https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27 | [React Page for Notifications](#React-Page-for-Notifications)                         | ✅      |
 | Run DynamoDB Local Container and ensure it works            | https://www.youtube.com/watch?v=CbQNMaa6zTg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=28 | [Run Dynamo DB Container](#Run-Dynamo-DB-Container)                                   | ✅      |
 | Run Postgres Container and ensure it works                  | https://www.youtube.com/watch?v=CbQNMaa6zTg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=28 | [Run Postgres Container](#Run-Postgres-Container)                                     | ✅      |
+| Pick the right cloud role: A beginners guide!               | https://www.youtube.com/watch?v=E0haz6mymxY&ab_channel=OpenUpTheCloud | | ✅      |
+
 
 # Docker Files
 - [Dockerfile File for Backend](../backend-flask/Dockerfile)
