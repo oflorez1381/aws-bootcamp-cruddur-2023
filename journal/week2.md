@@ -14,6 +14,7 @@ During week 02, we did the follow activities:
 
 # Instrument Honeycomb with OTEL
 <img src="assets/week2/01%20Honeycomb.png" width="1000"/>
+<img src="assets/week2/02%20Honeycomb.png" width="1000"/>
 
 # Instrument AWS X-Ray
 <img src="assets/week2/01%20x-ray.png" width="1000"/>
