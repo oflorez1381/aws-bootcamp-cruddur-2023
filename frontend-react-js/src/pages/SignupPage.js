@@ -26,7 +26,7 @@ export default function SignupPage() {
                 password: password,
                 attributes: {
                     name: name,
-                    email: username,
+                    email: email,
                     preferred_username: username,
                 },
                 autoSignIn: { // optional - enables auto sign in after user is confirmed
