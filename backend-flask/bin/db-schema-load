@@ -14,3 +14,5 @@ if [ "$1" = "prod" ]; then
 else
   URL=$CONNECTION_URL
 fi
+
+psql $URL cruddur < $schema_path
