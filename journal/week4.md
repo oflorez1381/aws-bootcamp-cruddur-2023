@@ -10,7 +10,7 @@ During week 04, we did the follow activities:
 | Install Postgres Driver in Backend Application                  | https://www.youtube.com/watch?v=Sa2iB33sKFo&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=47 | |✅|
 | Connect Gitpod to RDS Instance                                  | https://www.youtube.com/watch?v=Sa2iB33sKFo&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=47 | |✅|
 | Create Cognito Trigger to insert user into database             | https://www.youtube.com/watch?v=7qP4RcY2MwU&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=48 | |✅|
-| Create new activities with a database insert                    | https://www.youtube.com/watch?v=fTksxEQExL4&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=49 | | |
+| Create new activities with a database insert                    | https://www.youtube.com/watch?v=fTksxEQExL4&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=49 | |✅|
 
 ## Shell Script to Connect to DB
 
@@ -409,3 +409,8 @@ aws ec2 modify-security-group-rules \
 <img src="assets/week4/29-lambda.png" width="1000"/>
 <img src="assets/week4/30-lambda.png" width="1000"/>
 <img src="assets/week4/31-lambda.png" width="1000"/>
+
+### Create new activities
+<img src="assets/week4/01-activity.png" width="1000"/>
+<img src="assets/week4/02-activity.png" width="1000"/>
+<img src="assets/week4/03-activity.png" width="1000"/>
