@@ -28,7 +28,7 @@ gp env CONNECTION_URL="postgresql://postgres:pssword@127.0.0.1:5433/cruddur"
 ```
 
 ## Shell script to connect the database
-`bin/db-connect`
+`bin/db/connect`
 
 ```sh
 #! /usr/bin/bash
@@ -45,17 +45,17 @@ psql $URL
 We'll make it executable:
 
 ```sh
-chmod u+x bin/db-connect
+chmod u+x bin/connect
 ```
 
 To execute the script:
 ```sh
-./bin/db-connect
+./bin/db/connect
 ```
 
 ## Shell script to drop the database
 
-`bin/db-drop`
+`bin/db/drop`
 
 ```sh
 #! /usr/bin/bash
@@ -73,7 +73,7 @@ https://askubuntu.com/questions/595269/use-sed-on-a-string-variable-rather-than-
 
 ## See what connections we are using
 
-`bin/db-sessions`
+`bin/db/sessions`
 
 ```sh
 #! /usr/bin/bash
@@ -101,7 +101,7 @@ from pg_stat_activity;"
 
 ## Shell script to create the database
 
-`bin/db-create`
+`bin/db/create`
 
 ```sh
 #! /usr/bin/bash
@@ -117,7 +117,7 @@ psql $NO_DB_CONNECTION_URL -c "create database cruddur;"
 
 ## Shell script to load the schema
 
-`bin/db-schema-load`
+`bin/db/schema-load`
 
 ```sh
 #! /usr/bin/bash
@@ -142,7 +142,7 @@ psql $URL cruddur < $schema_path
 
 ## Shell script to load the seed data
 
-`bin/db-seed`
+`bin/db/seed`
 
 ```sh
 #! /usr/bin/bash
