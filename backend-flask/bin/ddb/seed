@@ -22,7 +22,7 @@ ddb = boto3.client('dynamodb',**attrs)
 
 def get_user_uuids():
   sql = """
-    SELECT
+    SELECT 
       users.uuid,
       users.display_name,
       users.handle
@@ -221,10 +221,10 @@ Person 2: Definitely. I think his character is a great example of the show's abi
 lines = conversation.lstrip('\n').rstrip('\n').split('\n')
 for i in range(len(lines)):
   if lines[i].startswith('Person 1: '):
-    key = 'oflorez'
+    key = 'my_user'
     message = lines[i].replace('Person 1: ', '')
   elif lines[i].startswith('Person 2: '):
-    key = 'odfd'
+    key = 'other_user'
     message = lines[i].replace('Person 2: ', '')
   else:
     print(lines[i])
