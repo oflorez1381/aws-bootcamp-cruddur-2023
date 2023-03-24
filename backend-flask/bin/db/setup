@@ -9,7 +9,11 @@ printf "${CYAN}==== ${LABEL}${NO_COLOR}\n"
 bin_path="$(realpath .)/bin"
 
 source "$bin_path/db/drop"
+sleep 2
 source "$bin_path/db/create"
+sleep 2
 source "$bin_path/db/schema-load"
+sleep 2
 source "$bin_path/db/seed"
-source "$bin_path/db/update_cognito_users_ids"
+sleep 2
+python "$bin_path/db/update_cognito_users_ids"
