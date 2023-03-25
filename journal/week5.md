@@ -102,6 +102,9 @@ WHERE
 
 ## DynamoDB Stream trigger to update message groups
 
+<img src="assets/week5/table-create-dynamo.png" width="1000"/>
+<img src="assets/week5/schema-load-dynamo-production.png" width="1000"/>
+
 - create a VPC endpoint for dynamoDB service on your VPC
 - create a Python lambda function in your vpc
 - enable streams on the table with 'new image' attributes included
@@ -109,6 +112,7 @@ WHERE
 - grant the lambda IAM role permission to read the DynamoDB stream events `AWSLambdaInvocation-DynamoDB`
 - grant the lambda IAM role permission to update table items
 
+<img src="assets/week5/create-vpc-endpoint.png" width="1000"/>
 
 **The Function**
 
@@ -154,3 +158,9 @@ def lambda_handler(event, context):
             )
             print("CREATE ===>",response)
 ```
+<img src="assets/week5/create-lambda-function.png" width="1000"/>
+<img src="assets/week5/turn-on-dynamo-streams.png" width="1000"/>
+<img src="assets/week5/create-trigger-lambda.png" width="1000"/>
+<img src="assets/week5/add-permissions.png" width="1000"/>
+<img src="assets/week5/testing-messages-production-I.png" width="1000"/>
+<img src="assets/week5/testing-messages-production-II.png" width="1000"/>
