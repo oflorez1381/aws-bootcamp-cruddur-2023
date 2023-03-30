@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster
+FROM 574352122985.dkr.ecr.ca-central-1.amazonaws.com/cruddur-python:3.10-slim-buster
 
 # Inside Container
 # make a new folder inside container
@@ -20,11 +20,11 @@ COPY . .
 
 # Set Enviroment Variables (Env Vars)
 # Inside Container and wil remain set when the container is running
-ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 
 EXPOSE ${PORT}
 
 # CMD (Command)
 # python3 -m flask run --host=0.0.0.0 --port=4567
-# CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
-CMD [ "sh", "start.sh" ]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
+# CMD [ "sh", "start.sh" ]

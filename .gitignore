@@ -192,3 +192,5 @@ $RECYCLE.BIN/
 /.idea/
 
 docker/**/*
+
+frontend-react-js/build/*
