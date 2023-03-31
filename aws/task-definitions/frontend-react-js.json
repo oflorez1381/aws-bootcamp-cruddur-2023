@@ -30,7 +30,6 @@
             "appProtocol": "http"
           }
         ],
-  
         "logConfiguration": {
           "logDriver": "awslogs",
           "options": {
