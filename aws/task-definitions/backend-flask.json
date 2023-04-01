@@ -46,7 +46,8 @@
           {"name": "AWS_COGNITO_USER_POOL_CLIENT_ID", "value": "6mkcnikhd49urbmhlg9a8aee7h"},
           {"name": "FRONTEND_URL", "value": "https://odfd.net"},
           {"name": "BACKEND_URL", "value": "https://api.odfd.net"},
-          {"name": "AWS_DEFAULT_REGION", "value": "ca-central-1"}
+          {"name": "AWS_DEFAULT_REGION", "value": "ca-central-1"},
+          {"name": "AWS_ENDPOINT_URL", "value": "https://dynamodb.ca-central-1.amazonaws.com"}
         ],
         "secrets": [
           {"name": "AWS_ACCESS_KEY_ID"    , "valueFrom": "arn:aws:ssm:ca-central-1:574352122985:parameter/cruddur/backend-flask/AWS_ACCESS_KEY_ID"},
