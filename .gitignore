@@ -194,3 +194,5 @@ $RECYCLE.BIN/
 docker/**/*
 
 frontend-react-js/build/*
+
+*.env
