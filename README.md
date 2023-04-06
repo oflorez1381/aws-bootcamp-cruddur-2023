@@ -1,19 +1,5 @@
 # FREE AWS Cloud Project Bootcamp
 
-FRONTEND_URL="*" BACKEND_URL="*" docker run --rm -p 4567:4567 -it backend-flask
-
-```
-docker build -t  backend-flask ./backend-flask
-docker build -t  backend-flask:latest ./backend-flask
-
-
-docker ps
-docker exec -it <container-id> bash
-
-
-docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
-```
-
 - Application: Cruddur
 - Cohort: 2023-A1
 
@@ -31,13 +17,13 @@ At the start of the bootcamp you need to create a new Github Repository from thi
 
 The `/journal` directory contains
 
-- [ ] [Week 0](journal/week0.md)
-- [ ] [Week 1](journal/week1.md)
-- [ ] [Week 2](journal/week2.md)
-- [ ] [Week 3](journal/week3.md)
-- [ ] [Week 4](journal/week4.md)
-- [ ] [Week 5](journal/week5.md)
-- [ ] [Week 6](journal/week6.md)
+- [X] [Week 0](journal/week0.md)
+- [X] [Week 1](journal/week1.md)
+- [X] [Week 2](journal/week2.md)
+- [X] [Week 3](journal/week3.md)
+- [X] [Week 4](journal/week4.md)
+- [X] [Week 5](journal/week5.md)
+- [X] [Week 6](journal/week6.md)
 - [ ] [Week 7](journal/week7.md)
 - [ ] [Week 8](journal/week8.md)
 - [ ] [Week 9](journal/week9.md)
