@@ -25,3 +25,20 @@ During week 06 - 07, we did the follow activities:
 | Create Dockerfile specfically for production use case                      | https://www.youtube.com/watch?v=G_8_xtS2MsY&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=64 | |✅|
 | Using ruby generate out env dot files for docker using erb templates                     | https://www.youtube.com/watch?v=G_8_xtS2MsY&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=64 | |✅|
 
+## Login
+<img src="assets/week6/login.png" width="1000"/>
+
+## create cluster
+<img src="assets/week6/create-cluster.png" width="1000"/>
+
+## create repository
+<img src="assets/week6/create-repository.png" width="1000"/>
+
+## create log group
+<img src="assets/week6/create-log-group.png" width="1000"/>
+
+## docker images
+<img src="assets/week6/docker-images.png" width="1000"/>
+
+
+
