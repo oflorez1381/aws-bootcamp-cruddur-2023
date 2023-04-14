@@ -24,7 +24,9 @@ ENV FLASK_DEBUG=1
 
 EXPOSE ${PORT}
 
+ENV PYTHONUNBUFFERED=1
+
 # CMD (Command)
 # python3 -m flask run --host=0.0.0.0 --port=4567
-CMD [ "python3", "-m" ,"-u", "flask", "run", "--host=0.0.0.0", "--port=4567", "--debug"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567", "--debug"]
 # CMD [ "sh", "start.sh" ]
