@@ -5,6 +5,7 @@ export default function ProfileHeading(props) {
     const backgroundImage = 'url("https://assets.cruddur.com/banners/banner.jpg")';
     const styles = {
         backgroundImage: backgroundImage,
+        crossorigin: 'anonymous',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     };
