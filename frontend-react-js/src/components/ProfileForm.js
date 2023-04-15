@@ -4,33 +4,35 @@ import process from 'process';
 import {getAccessToken} from 'lib/CheckAuth';
 
 export default function ProfileForm(props) {
-    const [presignedurl, setPresignedurl] = React.useState(0);
-    const [bio, setBio] = React.useState(0);
-    const [displayName, setDisplayName] = React.useState(0);
+    const [bio, setBio] = React.useState('');
+    const [displayName, setDisplayName] = React.useState('');
 
-    React.useEffect(() => {
-        console.log('useEffects', props)
-        setBio(props.profile.bio);
+    React.useEffect(()=>{
+        setBio(props.profile.bio || '');
         setDisplayName(props.profile.display_name);
     }, [props.profile])
 
-    const s3uploadkey = async (event)=> {
+    const s3uploadkey = async (extension)=> {
+        console.log('ext',extension)
         try {
-            console.log('s3upload')
-            const backend_url = "https://97n6i8j7of.execute-api.ca-central-1.amazonaws.com/avatars/key_upload"
+            const gateway_url = `${process.env.REACT_APP_API_GATEWAY_ENDPOINT_URL}/avatars/key_upload`
             await getAccessToken()
             const access_token = localStorage.getItem("access_token")
-            const res = await fetch(backend_url, {
+            const json = {
+                extension: extension
+            }
+            const res = await fetch(gateway_url, {
                 method: "POST",
+                body: JSON.stringify(json),
                 headers: {
-                    'Origin': "https://3000-omenking-awsbootcampcru-ts9rmefvwj6.ws-us94.gitpod.io",
+                    'Origin': process.env.REACT_APP_FRONTEND_URL,
                     'Authorization': `Bearer ${access_token}`,
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
-                }})
+                }
+            })
             let data = await res.json();
             if (res.status === 200) {
-                console.log('presigned url',data)
                 return data.url
             } else {
                 console.log(res)
@@ -42,15 +44,14 @@ export default function ProfileForm(props) {
     const s3upload = async (event)=> {
         console.log('event',event)
         const file = event.target.files[0]
-        console.log('file',file)
         const filename = file.name
         const size = file.size
         const type = file.type
         const preview_image_url = URL.createObjectURL(file)
         console.log(filename,size,type)
-        const presignedurl = await s3uploadkey()
-        console.log('pp',presignedurl)
-
+        const fileparts = filename.split('.')
+        const extension = fileparts[fileparts.length-1]
+        const presignedurl = await s3uploadkey(extension)
         try {
             console.log('s3upload')
             const res = await fetch(presignedurl, {
@@ -59,9 +60,8 @@ export default function ProfileForm(props) {
                 headers: {
                     'Content-Type': type
                 }})
-            let data = await res.json();
             if (res.status === 200) {
-                setPresignedurl(data.url)
+
             } else {
                 console.log(res)
             }
@@ -109,7 +109,7 @@ export default function ProfileForm(props) {
         setDisplayName(event.target.value);
     }
 
-    const close = (event) => {
+    const close = (event)=> {
         if (event.target.classList.contains("profile_popup")) {
             props.setPopped(false)
         }
@@ -129,7 +129,9 @@ export default function ProfileForm(props) {
                         </div>
                     </div>
                     <div className="popup_content">
+
                         <input type="file" name="avatarupload" onChange={s3upload} />
+
                         <div className="field display_name">
                             <label>Display Name</label>
                             <input
