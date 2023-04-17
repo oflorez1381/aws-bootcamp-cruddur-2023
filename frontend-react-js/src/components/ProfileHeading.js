@@ -4,7 +4,7 @@ import EditProfileButton from '../components/EditProfileButton';
 import ProfileAvatar from 'components/ProfileAvatar'
 
 export default function ProfileHeading(props) {
-    const backgroundImage = 'url("https://assets.cruddur.com/banners/banner.jpg")';
+    const backgroundImage = 'url("https://assets.odfd.net/avatars/enterprise.webp")';
     const styles = {
         backgroundImage: backgroundImage,
         crossorigin: 'anonymous',
