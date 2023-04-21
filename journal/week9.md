@@ -1,11 +1,12 @@
 # Week 9 — CI/CD with CodePipeline, CodeBuild and CodeDeploy
 During week 09, we did the follow activities:
 
-| Activities                               | Youtube                                                                                      | Link | Status |
-|------------------------------------------|----------------------------------------------------------------------------------------------|------| -- |
-| Live Stream                              | https://www.youtube.com/watch?v=DLYfI0ehMZE&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv          |      |✅|
-| Fix CodeBuild Issues                     | https://www.youtube.com/watch?v=py2E1f0IZg0&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv          |      |✅|
-| CodePipeline                             | https://www.youtube.com/watch?v=EAudiRT9Alw&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv          |      |✅|
+| Activities                         | Youtube                                                                             | Link | Status |
+|------------------------------------|-------------------------------------------------------------------------------------|------| -- |
+| Configuring CodeBuild Part 1       | https://www.youtube.com/watch?v=DLYfI0ehMZE&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv |      |✅|
+| Configuring CodeBuild Part 2       | https://www.youtube.com/watch?v=py2E1f0IZg0&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv |      |✅|
+| Configuring CodePipeline           | https://www.youtube.com/watch?v=EAudiRT9Alw&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv |      |✅|
+| CICD Pipeline Security             | https://www.youtube.com/watch?v=-8zEyHdBJDA                                         |      |✅|
 
 ## Configuration
 <img src="assets/week9/configuration-01.png" width="1000"/>
