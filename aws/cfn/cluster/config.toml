@@ -1,0 +1,7 @@
+[deploy]
+bucket = 'cruddur-cfn-templates'
+region = 'ca-central-1'
+stack_name = 'CrdCluster'
+
+[parameters]
+CertificateArn = 'arn:aws:acm:ca-central-1:574352122985:certificate/480c11e9-602f-426a-b0af-330fa3f904f1'
