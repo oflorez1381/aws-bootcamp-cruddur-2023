@@ -1,0 +1,9 @@
+[deploy]
+bucket = 'cruddur-cfn-templates'
+region = 'ca-central-1'
+stack_name = 'CrdFrontend'
+
+[parameters]
+CertificateArn = 'arn:aws:acm:us-east-1:574352122985:certificate/ac36909d-22f7-4b4f-881e-958e749a7d0e'
+WwwBucketName = 'www.odfd.net'
+RootBucketName = 'odfd.net'
