@@ -1,0 +1,4 @@
+[deploy]
+bucket = 'cruddur-cfn-templates'
+region = 'ca-central-1'
+stack_name = 'CrdNet'
