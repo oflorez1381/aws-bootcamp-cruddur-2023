@@ -4,5 +4,5 @@ region = 'ca-central-1'
 stack_name = 'CrdSrvBackendFlask'
 
 [parameters]
-EnvFrontendUrl = 'odfd.net'
-EnvBackendUrl = 'api.odfd.net'
+EnvFrontendUrl = 'https://odfd.net'
+EnvBackendUrl = 'https://api.odfd.net'
