@@ -2,3 +2,7 @@
 bucket = 'cruddur-cfn-templates'
 region = 'ca-central-1'
 stack_name = 'CrdSrvBackendFlask'
+
+[parameters]
+EnvFrontendUrl = 'odfd.net'
+EnvBackendUrl = 'api.odfd.net'
