@@ -1,0 +1,8 @@
+[deploy]
+bucket = 'cruddur-cfn-templates'
+region = 'ca-central-1'
+stack_name = 'CrdSrvBackendFlask'
+
+[parameters]
+EnvFrontendUrl = 'https://odfd.net'
+EnvBackendUrl = 'https://api.odfd.net'
