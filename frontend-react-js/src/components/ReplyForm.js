@@ -61,35 +61,39 @@ export default function ReplyForm(props) {
     content = <ActivityContent activity={props.activity} />;
   }
 
-
+  const close = (event)=> {
+    if (event.target.classList.contains("reply_popup")) {
+      props.setPopped(false)
+    }
+  }
   if (props.popped === true) {
     return (
-      <div className="popup_form_wrap">
-        <div className="popup_form">
-          <div className="popup_heading">
-          </div>
-          <div className="popup_content">
-            <div className="activity_wrap">
-              {content}
+        <div className="popup_form_wrap reply_popup" onClick={close}>
+          <div className="popup_form">
+            <div className="popup_heading">
             </div>
-            <form 
-              className='replies_form'
-              onSubmit={onsubmit}
-            >
-              <textarea
-                type="text"
-                placeholder="what is your reply?"
-                value={message}
-                onChange={textarea_onchange} 
-              />
-              <div className='submit'>
-                <div className={classes.join(' ')}>{240-count}</div>
-                <button type='submit'>Reply</button>
+            <div className="popup_content">
+              <div className="activity_wrap">
+                {content}
               </div>
-            </form>
+              <form
+                  className='replies_form'
+                  onSubmit={onsubmit}
+              >
+              <textarea
+                  type="text"
+                  placeholder="what is your reply?"
+                  value={message}
+                  onChange={textarea_onchange}
+              />
+                <div className='submit'>
+                  <div className={classes.join(' ')}>{240-count}</div>
+                  <button type='submit'>Reply</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
     );
   }
 }
