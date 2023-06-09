@@ -1,14 +1,12 @@
 import './NotificationsFeedPage.css';
 import React from "react";
 
-import DesktopNavigation from '../components/DesktopNavigation';
-import DesktopSidebar from '../components/DesktopSidebar';
+import DesktopNavigation  from '../components/DesktopNavigation';
+import DesktopSidebar     from '../components/DesktopSidebar';
 import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
-
-// [TODO] Authenication
-import Cookies from 'js-cookie'
+import {checkAuth, getAccessToken} from 'lib/CheckAuth';
 
 export default function NotificationsFeedPage() {
     const [activities, setActivities] = React.useState([]);
@@ -21,7 +19,12 @@ export default function NotificationsFeedPage() {
     const loadData = async () => {
         try {
             const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/notifications`
+            await getAccessToken()
+            const access_token = localStorage.getItem("access_token")
             const res = await fetch(backend_url, {
+                headers: {
+                    Authorization: `Bearer ${access_token}`
+                },
                 method: "GET"
             });
             let resJson = await res.json();
@@ -35,29 +38,18 @@ export default function NotificationsFeedPage() {
         }
     };
 
-    const checkAuth = async () => {
-        console.log('checkAuth')
-        // [TODO] Authenication
-        if (Cookies.get('user.logged_in')) {
-            setUser({
-                display_name: Cookies.get('user.name'),
-                handle: Cookies.get('user.username')
-            })
-        }
-    };
-
-    React.useEffect(() => {
+    React.useEffect(()=>{
         //prevents double call
         if (dataFetchedRef.current) return;
         dataFetchedRef.current = true;
 
         loadData();
-        checkAuth();
+        checkAuth(setUser);
     }, [])
 
     return (
         <article>
-            <DesktopNavigation user={user} active={'notifications'} setPopped={setPopped}/>
+            <DesktopNavigation user={user} active={'notifications'} setPopped={setPopped} />
             <div className='content'>
                 <ActivityForm
                     popped={popped}
@@ -82,7 +74,7 @@ export default function NotificationsFeedPage() {
                     />
                 </div>
             </div>
-            <DesktopSidebar user={user}/>
+            <DesktopSidebar user={user} />
         </article>
     );
 }
