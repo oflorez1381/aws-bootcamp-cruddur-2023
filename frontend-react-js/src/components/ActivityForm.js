@@ -13,7 +13,7 @@ export default function ActivityForm(props) {
 
     const classes = []
     classes.push('count')
-    if (240 - count < 0) {
+    if (240-count < 0){
         classes.push('err')
     }
 
@@ -24,14 +24,18 @@ export default function ActivityForm(props) {
             message: message,
             ttl: ttl
         }
-        post(url, payload_data, setErrors, function (data) {
-            // add activity to the feed
-            props.setActivities(current => [data, ...current]);
-            // reset and close the form
-            setCount(0)
-            setMessage('')
-            setTtl('7-days')
-            props.setPopped(false)
+        post(url,payload_data,{
+            auth: true,
+            setErrors: setErrors,
+            success: function(data){
+                // add activity to the feed
+                props.setActivities(current => [data,...current]);
+                // reset and close the form
+                setCount(0)
+                setMessage('')
+                setTtl('7-days')
+                props.setPopped(false)
+            }
         })
     }
 
@@ -57,10 +61,10 @@ export default function ActivityForm(props) {
             onChange={textarea_onchange}
         />
                 <div className='submit'>
-                    <div className={classes.join(' ')}>{240 - count}</div>
+                    <div className={classes.join(' ')}>{240-count}</div>
                     <button type='submit'>Crud</button>
                     <div className='expires_at_field'>
-                        <BombIcon className='icon'/>
+                        <BombIcon className='icon' />
                         <select
                             value={ttl}
                             onChange={ttl_onchange}
@@ -71,10 +75,10 @@ export default function ActivityForm(props) {
                             <option value='1-day'>1 day</option>
                             <option value='12-hours'>12 hours</option>
                             <option value='3-hours'>3 hours</option>
-                            <option value='1-hour'>1 hour</option>
+                            <option value='1-hour'>1 hour </option>
                         </select>
                     </div>
-                    <FormErrors errors={errors}/>
+                    <FormErrors errors={errors} />
                 </div>
             </form>
         );

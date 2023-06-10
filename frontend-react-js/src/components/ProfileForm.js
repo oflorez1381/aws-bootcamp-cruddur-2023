@@ -9,13 +9,13 @@ export default function ProfileForm(props) {
     const [bio, setBio] = React.useState('');
     const [displayName, setDisplayName] = React.useState('');
 
-    React.useEffect(() => {
+    React.useEffect(()=>{
         setBio(props.profile.bio || '');
         setDisplayName(props.profile.display_name);
     }, [props.profile])
 
-    const s3uploadkey = async (extension) => {
-        console.log('ext', extension)
+    const s3uploadkey = async (extension)=> {
+        console.log('ext',extension)
         try {
             const gateway_url = `${process.env.REACT_APP_API_GATEWAY_ENDPOINT_URL}/avatars/key_upload`
             await getAccessToken()
@@ -43,16 +43,16 @@ export default function ProfileForm(props) {
             console.log(err);
         }
     }
-    const s3upload = async (event) => {
-        console.log('event', event)
+    const s3upload = async (event)=> {
+        console.log('event',event)
         const file = event.target.files[0]
         const filename = file.name
         const size = file.size
         const type = file.type
         //const preview_image_url = URL.createObjectURL(file)
-        console.log(filename, size, type)
+        console.log(filename,size,type)
         const fileparts = filename.split('.')
-        const extension = fileparts[fileparts.length - 1]
+        const extension = fileparts[fileparts.length-1]
         const presignedurl = await s3uploadkey(extension)
         try {
             console.log('s3upload')
@@ -61,8 +61,7 @@ export default function ProfileForm(props) {
                 body: file,
                 headers: {
                     'Content-Type': type
-                }
-            })
+                }})
             if (res.status === 200) {
 
             } else {
@@ -80,10 +79,14 @@ export default function ProfileForm(props) {
             bio: bio,
             display_name: displayName
         }
-        put(url, payload_data, setErrors, function (data) {
-            setBio(null)
-            setDisplayName(null)
-            props.setPopped(false)
+        put(url,payload_data,{
+            auth: true,
+            setErrors: setErrors,
+            success: function(data){
+                setBio(null)
+                setDisplayName(null)
+                props.setPopped(false)
+            }
         })
     }
 
@@ -95,7 +98,7 @@ export default function ProfileForm(props) {
         setDisplayName(event.target.value);
     }
 
-    const close = (event) => {
+    const close = (event)=> {
         if (event.target.classList.contains("profile_popup")) {
             props.setPopped(false)
         }
@@ -115,7 +118,7 @@ export default function ProfileForm(props) {
                         </div>
                     </div>
                     <div className="popup_content">
-                        <input type="file" name="avatarupload" onChange={s3upload}/>
+                        <input type="file" name="avatarupload" onChange={s3upload} />
 
                         <div className="field display_name">
                             <label>Display Name</label>
@@ -134,7 +137,7 @@ export default function ProfileForm(props) {
                                 onChange={bio_onchange}
                             />
                         </div>
-                        <FormErrors errors={errors}/>
+                        <FormErrors errors={errors} />
                     </div>
                 </form>
             </div>
