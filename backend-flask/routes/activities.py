@@ -11,12 +11,10 @@ from services.home_activities import *
 from services.notifications_activities import *
 from services.create_activity import *
 from services.search_activities import *
-from services.show_activity import *
 from services.create_reply import *
 
 ## helpers
 from lib.helpers import model_json
-
 
 def load(app):
     def default_home_feed(e):
@@ -26,7 +24,7 @@ def load(app):
         return data, 200
 
     @app.route("/api/activities/home", methods=['GET'])
-    # @xray_recorder.capture('activities_home')
+    #@xray_recorder.capture('activities_home')
     @jwt_required(on_error=default_home_feed)
     def data_home():
         data = HomeActivities.run(cognito_user_id=g.cognito_user_id)
@@ -43,7 +41,7 @@ def load(app):
         model = SearchActivities.run(term)
         return model_json(model)
 
-    @app.route("/api/activities", methods=['POST', 'OPTIONS'])
+    @app.route("/api/activities", methods=['POST','OPTIONS'])
     @cross_origin()
     @jwt_required()
     def data_activities():
@@ -52,13 +50,7 @@ def load(app):
         model = CreateActivity.run(message, g.cognito_user_id, ttl)
         return model_json(model)
 
-    @app.route("/api/activities/<string:activity_uuid>", methods=['GET'])
-    @xray_recorder.capture('activities_show')
-    def data_show_activity(activity_uuid):
-        data = ShowActivity.run(activity_uuid=activity_uuid)
-        return data, 200
-
-    @app.route("/api/activities/<string:activity_uuid>/reply", methods=['POST', 'OPTIONS'])
+    @app.route("/api/activities/<string:activity_uuid>/reply", methods=['POST','OPTIONS'])
     @cross_origin()
     @jwt_required()
     def data_activities_reply(activity_uuid):
