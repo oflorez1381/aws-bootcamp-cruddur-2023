@@ -3,7 +3,6 @@ import React from "react";
 
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
-import {checkAuth, getAccessToken} from '../lib/CheckAuth';
 import {checkAuth} from '../lib/CheckAuth';
 import {get} from 'lib/Requests';
 
