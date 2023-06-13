@@ -6,3 +6,4 @@ stack_name = 'CrdSrvBackendFlask'
 [parameters]
 EnvFrontendUrl = 'https://odfd.net'
 EnvBackendUrl = 'https://api.odfd.net'
+DDBMessageTable = 'CrdDdb-DynamoDBTable-RWAVLMGBPA47'
